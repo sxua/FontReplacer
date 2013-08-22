@@ -45,11 +45,14 @@ static void initializeReplacementFonts()
 		method_exchangeImplementations(fontWithDescriptor_, replacementFontWithDescriptor_);
 }
 
-+ (UIFont *)replacement_fontWithDescriptor:(UIFontDescriptor *)descriptor size:(CGFloat)pointSize
++ (UIFont *)replacement_fontWithDescriptor:(id)descriptor size:(CGFloat)pointSize
 {
 	initializeReplacementFonts();
     
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-method-access"
     NSString *fontName = [descriptor fontAttributes][@"NSFontNameAttribute"];
+#pragma clang diagnostic pop
 	NSString *replacementFontName = [replacementDictionary objectForKey:fontName];
 	return [self replacement_fontWithName:replacementFontName ?: fontName size:pointSize];
 }
