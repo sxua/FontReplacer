@@ -27,16 +27,19 @@ static void initializeReplacementFonts()
 
 + (void) load
 {
+    NSString *selectorName = @"fontWithName:size:";
+    SEL tests = NSSelectorFromString([selectorName stringByAppendingString:@"traits:"]);
+
 	Method fontWithName_size_ = class_getClassMethod([UIFont class], @selector(fontWithName:size:));
-	Method fontWithName_size_traits_ = class_getClassMethod([UIFont class], @selector(fontWithName:size:traits:));
+	Method fontWithName_size_tests_ = class_getClassMethod([UIFont class], tests);
 	Method replacementFontWithName_size_ = class_getClassMethod([UIFont class], @selector(replacement_fontWithName:size:));
-	Method replacementFontWithName_size_traits_ = class_getClassMethod([UIFont class], @selector(replacement_fontWithName:size:traits:));
+	Method replacementFontWithName_size_tests_ = class_getClassMethod([UIFont class], @selector(replacement_fontWithName:size:tests:));
 	
     
 	if (fontWithName_size_ && replacementFontWithName_size_ && strcmp(method_getTypeEncoding(fontWithName_size_), method_getTypeEncoding(replacementFontWithName_size_)) == 0)
 		method_exchangeImplementations(fontWithName_size_, replacementFontWithName_size_);
-	if (fontWithName_size_traits_ && replacementFontWithName_size_traits_ && strcmp(method_getTypeEncoding(fontWithName_size_traits_), method_getTypeEncoding(replacementFontWithName_size_traits_)) == 0)
-		method_exchangeImplementations(fontWithName_size_traits_, replacementFontWithName_size_traits_);
+	if (fontWithName_size_tests_ && replacementFontWithName_size_tests_ && strcmp(method_getTypeEncoding(fontWithName_size_tests_), method_getTypeEncoding(replacementFontWithName_size_tests_)) == 0)
+		method_exchangeImplementations(fontWithName_size_tests_, replacementFontWithName_size_tests_);
 
     // iOS7 stuff
 	Method fontWithDescriptor_ = class_getClassMethod([UIFont class], @selector(fontWithDescriptor:size:));
@@ -64,11 +67,11 @@ static void initializeReplacementFonts()
 	return [self replacement_fontWithName:replacementFontName ?: fontName size:fontSize];
 }
 
-+ (UIFont *) replacement_fontWithName:(NSString *)fontName size:(CGFloat)fontSize traits:(int)traits
++ (UIFont *) replacement_fontWithName:(NSString *)fontName size:(CGFloat)fontSize tests:(int)traits
 {
 	initializeReplacementFonts();
 	NSString *replacementFontName = [replacementDictionary objectForKey:fontName];
-	return [self replacement_fontWithName:replacementFontName ?: fontName size:fontSize traits:traits];
+	return [self replacement_fontWithName:replacementFontName ?: fontName size:fontSize tests:traits];
 }
 
 + (void) setReplacementDictionary:(NSDictionary *)aReplacementDictionary
