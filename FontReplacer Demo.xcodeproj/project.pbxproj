@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0F8DB7F17E3DECD004AC1F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0F8DB7E17E3DECD004AC1F0 /* Default-568h@2x.png */; };
 		DA336B6B13F01F5D00A60EA6 /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA336B6A13F01F5D00A60EA6 /* DemoViewController.xib */; };
 		DA4C182113F446120015A600 /* FontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4C181F13F446110015A600 /* FontsViewController.m */; };
 		DA4C182813F4506A0015A600 /* ComparatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4C182613F450680015A600 /* ComparatorViewController.m */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0F8DB7E17E3DECD004AC1F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DA336B6A13F01F5D00A60EA6 /* DemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
 		DA4C181E13F446110015A600 /* FontsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsViewController.h; sourceTree = "<group>"; };
 		DA4C181F13F446110015A600 /* FontsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontsViewController.m; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		DA9861EF13F01BCD006DEC9A = {
 			isa = PBXGroup;
 			children = (
+				A0F8DB7E17E3DECD004AC1F0 /* Default-568h@2x.png */,
 				DA98621913F01E55006DEC9A /* UIFont+Replacement */,
 				DA98620213F01BCE006DEC9A /* FontReplacer Demo */,
 				DA9861FD13F01BCE006DEC9A /* Frameworks */,
@@ -163,7 +166,7 @@
 		DA9861F113F01BCD006DEC9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "";
 			};
 			buildConfigurationList = DA9861F413F01BCD006DEC9A /* Build configuration list for PBXProject "FontReplacer Demo" */;
@@ -193,6 +196,7 @@
 				DA6C855813F02703007060AF /* CaviarDreams_Bold.ttf in Resources */,
 				DA6C855913F02703007060AF /* CaviarDreams_BoldItalic.ttf in Resources */,
 				DA6C855A13F02703007060AF /* CaviarDreams_Italic.ttf in Resources */,
+				A0F8DB7F17E3DECD004AC1F0 /* Default-568h@2x.png in Resources */,
 				DA6C856513F035EA007060AF /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +224,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -232,10 +241,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -244,14 +258,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = "NS_BLOCK_ASSERTIONS=1";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				SDKROOT = iphoneos;
@@ -262,6 +285,7 @@
 		DA98621713F01BCE006DEC9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FontReplacer Demo/FontReplacer Demo-Prefix.pch";
 				INFOPLIST_FILE = "FontReplacer Demo/FontReplacer Demo-Info.plist";
@@ -273,6 +297,7 @@
 		DA98621813F01BCE006DEC9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FontReplacer Demo/FontReplacer Demo-Prefix.pch";
 				INFOPLIST_FILE = "FontReplacer Demo/FontReplacer Demo-Info.plist";

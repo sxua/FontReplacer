@@ -15,7 +15,7 @@
 
 + (id) resultWithFamilyName:(NSString *)familyName score:(CGFloat)score
 {
-	return [[[self alloc] initWithFamilyName:familyName score:score] autorelease];
+	return [[self alloc] initWithFamilyName:familyName score:score];
 }
 
 - (id) initWithFamilyName:(NSString *)aFamilyName score:(CGFloat)aScore

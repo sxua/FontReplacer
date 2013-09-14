@@ -10,6 +10,7 @@
 
 @interface UIFont (Replacement)
 
-+ (void) setReplacementDictionary:(NSDictionary *)aReplacementDictionary;
++ (NSDictionary *)replacementDictionary;
++ (void)setReplacementDictionary:(NSDictionary *)aReplacementDictionary;
 
 @end

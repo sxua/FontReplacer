@@ -13,7 +13,7 @@
 
 - (NSComparisonResult) compare:(ComparisonResult *)aResult;
 
-@property (nonatomic, retain) NSString *familyName;
+@property (nonatomic, strong) NSString *familyName;
 @property (nonatomic, assign) CGFloat score;
 
 @end

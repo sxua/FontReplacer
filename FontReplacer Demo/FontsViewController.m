@@ -16,27 +16,22 @@
 	if (!(self = [self initWithStyle:UITableViewStylePlain]))
 		return nil;
 	
-	familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(localizedCompare:)] retain];
+	familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(localizedCompare:)];
 	
 	return self;
 }
 
-- (void) dealloc
-{
-	[familyNames release];
-	[super dealloc];
-}
 
 // MARK: - Table View
 
 - (NSArray *) fontNamesForSection:(NSInteger)section
 {
-	return [[UIFont fontNamesForFamilyName:[familyNames objectAtIndex:section]] sortedArrayUsingSelector:@selector(localizedCompare:)];
+	return [[UIFont fontNamesForFamilyName:familyNames[section]] sortedArrayUsingSelector:@selector(localizedCompare:)];
 }
 
 - (NSString *) fontNameAtIndexPath:(NSIndexPath *)indexPath
 {
-	return [[self fontNamesForSection:indexPath.section] objectAtIndex:indexPath.row];
+	return [self fontNamesForSection:indexPath.section][indexPath.row];
 }
 
 - (NSArray *) sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -55,7 +50,7 @@
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	return [familyNames objectAtIndex:section];
+	return familyNames[section];
 }
 			
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -70,7 +65,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	

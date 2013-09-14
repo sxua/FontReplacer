@@ -8,6 +8,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
-@property (nonatomic, retain) NSDictionary *originalReplacementDictionary;
+@property (nonatomic, strong) NSDictionary *originalReplacementDictionary;
 
 @end

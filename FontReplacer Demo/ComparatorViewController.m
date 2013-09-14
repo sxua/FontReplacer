@@ -45,11 +45,6 @@
 	return self;
 }
 
-- (void) dealloc
-{
-	[results release];
-	[super dealloc];
-}
 
 // MARK: - Table View
 
@@ -69,9 +64,9 @@
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil)
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
 	
-	ComparisonResult *result = [results objectAtIndex:indexPath.row];
+	ComparisonResult *result = results[indexPath.row];
 	cell.textLabel.text = result.familyName;
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", result.score];
 	

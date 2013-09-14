@@ -23,7 +23,7 @@
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:fontsViewController];
 	UITabBarController *tabBarController = [[UITabBarController alloc] init];
 	tabBarController.delegate = self;
-	tabBarController.viewControllers = [NSArray arrayWithObjects:demoViewController, navigationController, nil];
+	tabBarController.viewControllers = @[demoViewController, navigationController];
 	demoViewController.title = @"Demo";
 	fontsViewController.title = @"Fonts";
 	if ([window respondsToSelector:@selector(setRootViewController:)])
